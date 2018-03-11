@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Vim</title>
+		<meta name="description" content="Vim">    
+		<meta name="author" content="Markus Ankenbrand" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+		<link rel="stylesheet" href="css/kbd.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' +
+				( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+				'.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+			<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Vim</h2>
+					<h3>Markus Ankenbrand</h3>
+					<h4>devcamp Würzburg 2018</h4>
+					<img src="vim.png" alt="Vim" style="width: 100px;"/>
+				</section>  
+				<section id="einführung" class="level1">
+					<h2>Das wichtigste zuerst</h2>
+					<img src="exit_vim.png" alt="Exit Vim" style="width: 100%;"/>
+					<kbd>Esc</kbd><code>:q!</code>
+				</section>
+				<section id="einführung-2" class="level1">
+					<h2>Bewegung</h2>
+					<ul>
+						<li style="padding:2px"><kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd>, <kbd>l</kbd></li>
+						<li style="padding:2px"><kbd>w</kbd></li>
+						<li style="padding:2px"><kbd>b</kbd></li>
+						<li style="padding:2px"><kbd>$</kbd></li>
+						<li style="padding:2px"><kbd>G</kbd></li>
+						<li style="padding:2px"><kbd>*</kbd></li>
+						<li style="padding:2px"><kbd>t</kbd></li>
+					</ul>
+				</section>
+				<section id="einführung-3" class="level1">
+					<h2>Operator</h2>
+					<ul>
+						<li style="padding:2px"><kbd>d</kbd></li>
+						<li style="padding:2px"><kbd>y</kbd></li>
+						<li style="padding:2px"><kbd>c</kbd></li>
+						<li style="padding:2px"><kbd>p</kbd></li>
+						<li style="padding:2px"><kbd>=</kbd></li>
+						<li style="padding:2px"><kbd>&gt;</kbd></li>
+					</ul>
+				</section>
+				<section id="einführung-4" class="level1">
+					<h2>Und jetzt: Action</h2>
+					<ul>
+						<li style="padding:2px"><kbd>dw</kbd></li>
+						<li style="padding:2px"><kbd>y$</kbd></li>
+						<li style="padding:2px"><kbd>cb</kbd></li>
+						<li style="padding:2px">count</li>
+						<li style="padding:2px">Textobjekte</li>
+						<li style="padding:2px"><kbd>.</kbd></li>
+					</ul>
+				</section>
+				<section id="beispiel" class="level1">
+					<h2>Beispiele</h2>
+				</section>
+				<section id="further-topics" class="level1">
+					<h2>Weitere Themen</h2>
+					<ul>
+							<li>Visual Mode</li>
+							<li>Search/Replace</li>
+							<li>Ex Commands</li>
+							<li>Autocomplete</li>
+							<li>Macros</li>
+							<li>Plugins</li>
+							<li><a href="http://vimgolf.com/">VimGolf</a></li>
+					</ul>
+				</section>
+				<section id="vim-oder-ide" class="level1">
+					<h2>Vim oder IDE</h2>
+					<p>Warum nicht beides? - vim emulation</p>
+					<ul>
+							<li><a href="https://plugins.jetbrains.com/plugin/164-ideavim">IdeaVim</a></li>
+							<li><a href="https://github.com/emacs-evil/evil">Evil Mode</a></li>
+							<li><a href="https://github.com/t9md/atom-vim-mode-plus">Atom Vim-Mode-Plus</a></li>
+							<li>...</li>
+					</ul>
+				</section>
+				<section id="mehr-lernen" class="level1">
+					<h2>Mehr lernen</h2>
+					<p><img src="practical_vim_cover.jpg" alt="Practical Vim Cover" style="width: 250px;"/></p>
+					<p>https://pragprog.com/book/dnvim2/practical-vim-second-edition</p>
+				</section>
+			</div>
+
+			<script src="lib/js/head.min.js"></script>
+			<script src="js/reveal.js"></script>
+
+			<script>
+				// Full list of configuration options available here:
+				// https://github.com/hakimel/reveal.js#configuration
+				Reveal.initialize({
+					controls: false,
+					progress: true,
+					history: true,
+					center: false,
+
+					// available themes are in /css/theme
+					theme: Reveal.getQueryHash().theme || 'moon', 
+
+					// default/cube/page/concave/zoom/linear/fade/none
+					transition: Reveal.getQueryHash().transition || 'fade',
+
+					// Optional libraries used to extend on reveal.js
+					dependencies: [
+						{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+						{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+						{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+						{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+						{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+						{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+						// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					]
+				});
+
+			</script>
+
+	</body>
+</html>
